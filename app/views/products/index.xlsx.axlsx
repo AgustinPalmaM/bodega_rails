@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
-wb.add_worksheet(name: "Productos") do |sheet|
-  sheet.add_row ['Id', 'Referencia', 'Nombre', 'Cantidad']
+wb.add_worksheet(name: 'Productos') do |sheet|
+  sheet.add_row %w[Id Referencia Nombre Cantidad]
   @products.each do |product|
     sheet.add_row [product.id, product.reference, product.name, product.quantity_stock]
   end

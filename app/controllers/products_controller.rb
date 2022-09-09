@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
@@ -6,9 +8,9 @@ class ProductsController < ApplicationController
     @products = Product.all
     respond_to do |format|
       format.html
-      format.xlsx {
+      format.xlsx do
         response.headers['Content-Disposition'] = 'attachment; filename="Listado de productos.xlsx"'
-      }
+      end
     end
   end
 
@@ -16,9 +18,9 @@ class ProductsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.xlsx {
+      format.xlsx do
         response.headers['Content-Disposition'] = 'attachment; filename="movimientos producto.xlsx"'
-      }
+      end
     end
   end
 

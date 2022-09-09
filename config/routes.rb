@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Defines the root path route ("/")
-  root "dashboard#index"
+  root 'dashboard#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :products do
     member do
@@ -8,5 +10,4 @@ Rails.application.routes.draw do
       post :create_movement
     end
   end
-
 end

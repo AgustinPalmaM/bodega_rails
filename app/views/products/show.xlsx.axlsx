@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
-wb.add_worksheet(name: "Detalle movimientos") do |sheet|
+wb.add_worksheet(name: 'Detalle movimientos') do |sheet|
   sheet.add_row(['Id', @product.id])
   sheet.add_row(['Referencia', @product.reference])
   sheet.add_row(['Nombre', @product.name])
@@ -7,7 +9,7 @@ wb.add_worksheet(name: "Detalle movimientos") do |sheet|
   sheet.add_row(['Descripcion', @product.description])
   sheet.add_row(['Fecha Creacion', @product.created_at])
   sheet.add_row([])
-  sheet.add_row(['Id', 'Cantidad', 'Comentario', 'Fecha'])
+  sheet.add_row(%w[Id Cantidad Comentario Fecha])
   @product.movements.each do |movement|
     sheet.add_row([movement.movement_type_name, movement.quantity, movement.comment, movement.created_at])
   end
