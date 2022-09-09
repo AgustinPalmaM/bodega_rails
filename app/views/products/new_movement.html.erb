@@ -19,6 +19,16 @@
   <div class="col-lg-12">
     <div class="card p-5">
       <%= form_with model: @movement, url: create_movement_product_path(@product) do |form| %>
+        <% if @movement.errors.any? %>
+          <div class="alert alert-danger">
+            <h3><%= flash[:notice]%></h3>
+            <ul>
+              <% @movement.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div class="form-group">
           <%= form.label :movement_type, "Tipo de movimiento" %>
           <%= form.select :movement_type, options_for_select(Movement.get_movement_types), {}, class: 'form-control' %>

@@ -63,11 +63,12 @@ class ProductsController < ApplicationController
   def create_movement
     @product = Product.find(params[:id])
     @movement = Movement.new(movement_params)
-    @movement.product_i = @product.id
+    @movement.product_id = @product.id
     if @movement.save
       redirect_to @product, notice: 'Movimiento creado satisfactoriamente'
     else
-
+      flash[:notice] = 'No se ha creado el movimiento'
+      render :new_movement, status: :unprocessable_entity
     end
   end
 
