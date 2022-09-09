@@ -33,3 +33,30 @@
     </div>
   </div>
 </div>
+<div class="row py-3">
+  <div class="col-lg-12">
+    <h1>Movimientos</h1>
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Tipo Movimiento</th>
+            <th>Cantidad</th>
+            <th>Comentairio</th>
+            <th>Fecha Movimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @product.movements.each do |movement|%>
+            <tr>
+              <td><%= movement.movement_type_name %></td>
+              <td><%= movement.quantity %></td>
+              <td><%= movement.comment %></td>
+              <td><%= movement.created_at.strftime("%d-%m-%Y %H:%M") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

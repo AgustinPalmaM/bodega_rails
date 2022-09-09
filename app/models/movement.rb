@@ -12,5 +12,10 @@ class Movement < ApplicationRecord
     }
   end
 
+  def movement_type_name
+    return 'Agregar' if movement_type == MOVEMENT_TYPES[:add]
+    return 'Quitar' if movement_type == MOVEMENT_TYPES[:remove]
+  end
+
   validates :quantity, presence: true, numericality: true
 end
