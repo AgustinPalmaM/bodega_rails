@@ -5,6 +5,7 @@
       <%= link_to  "Volver a productos", products_path, class: 'btn btn-primary font-weight-bold' %>
       <%= link_to  "Editar producto", edit_product_path(@product), class: 'btn btn-warning font-weight-bold' %>
       <%= link_to "Borrar producto", @product, method: :delete, class: 'btn btn-danger font-weight-bold' %>
+      <%= link_to "Nuevo movimiento", new_movement_product_path(@product), class: 'btn btn-success font-weight-bold' %>
     </div>
     <div class="card">
       <table class="table">
