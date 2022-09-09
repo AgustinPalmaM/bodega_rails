@@ -6,7 +6,7 @@
   <span class="text">Crear nuevo producto</span>
 </a>
 <br>
-<table class="table">
+<table class="table mt-2">
   <thead>
     <tr>
       <th>Id</th>
@@ -22,7 +22,7 @@
         <td><%= product.id %></td>
         <td><%= product.name %></td>
         <td><%= product.reference %></td>
-        <td>0</td>
+        <td><%= product.quantity_stock %></td>
         <td> <%= link_to "Detalles", product_path(product), class: 'btn btn-primary' %></td>
       </tr>
     <% end %>
