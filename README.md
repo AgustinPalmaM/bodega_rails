@@ -1,24 +1,13 @@
-# README
+This project is to practice rails creating a simple admin system of products with a functionality to download lists in excel format.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby -v 3.1.2
+Rails -v 7.0.3.1
 
-Things you may want to cover:
+Gems to manage export to excel:
+[] gem 'rubyzip', '>= 1.2.1'
+[] gem 'axlsx'
+[] gem 'axlsx_rails'
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
